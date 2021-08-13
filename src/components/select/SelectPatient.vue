@@ -186,18 +186,18 @@ name: "SelectPatient",
               peep.push(res.data['DATA'][i].peep)
               fio2.push(res.data['DATA'][i].fio2)
               vt.push(res.data['DATA'][i].VT)
-              pplat.push(res.data['DATA'][i])
-              po2.push(res.data['DATA'][i])
-              pco2.push(res.data['DATA'][i])
-              pf.push(res.data['DATA'][i])
-              spo2_bg.push(res.data['DATA'][i])
-              temp.push(res.data['DATA'][i])
-              ph.push(res.data['DATA'][i])
-              hr.push(res.data['DATA'][i])
-              spo2.push(res.data['DATA'][i])
-              dbp.push(res.data['DATA'][i])
-              sbp.push(res.data['DATA'][i])
-              mbp.push(res.data['DATA'][i])
+              pplat.push(res.data['DATA'][i].pplat)
+              po2.push(res.data['DATA'][i].po2)
+              pco2.push(res.data['DATA'][i].pco2)
+              pf.push(res.data['DATA'][i].pf)
+              spo2_bg.push(res.data['DATA'][i].spo2_bg)
+              temp.push(res.data['DATA'][i].temp)
+              ph.push(res.data['DATA'][i].ph)
+              hr.push(res.data['DATA'][i].hr)
+              spo2.push(res.data['DATA'][i].spo2)
+              dbp.push(res.data['DATA'][i].dbp)
+              sbp.push(res.data['DATA'][i].sbp)
+              mbp.push(res.data['DATA'][i].mbp)
 
             }
 
@@ -274,8 +274,9 @@ name: "SelectPatient",
               DT:ph.map((item)=>{return item==0?null:item}),
               ShortCycle:ph.map((item)=>{return item==0?null:item}),
               ProlongedCycle:ph.map((item)=>{return item==0?null:item}),
+
             }
-            console.log(peep.map((item)=>{return item==0?null:item}));
+            console.log(dbp);
             this.$store.commit('setData',newData)
 
           }
